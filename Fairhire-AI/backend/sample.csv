@@ -1,0 +1,7 @@
+Name,Gender,College,CGPA,Skills,Experience,Achievements,Selected
+A,Male,Tier1,9.5,Low,Low,Low,Yes
+B,Female,Tier3,8.0,High,High,High,No
+C,Male,Tier1,9.2,Low,Medium,Low,Yes
+D,Female,Tier2,7.5,High,High,Medium,No
+E,Male,Tier1,9.8,Low,Low,Low,Yes
+F,Female,Tier3,8.2,High,Medium,High,No
