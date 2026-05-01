@@ -191,28 +191,9 @@ Contributions are welcome! Feel free to fork, improve, and raise PRs.
 
 For feedback or collaboration:
 
-* LinkedIn: [Your LinkedIn Profile]
+* LinkedIn: www.linkedin.com/in/abhinav-kumar-969ab5367
 
----
 
-## ⭐ Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub!
-
-```
-
----
-
-# 🔥 This README will:
-
-- Impress recruiters  
-- Show full project clarity  
-- Make your repo look **professional-level**  
-
----
-
-If you want next:
-- ⭐ Add badges (stars, deploy status)
 - 🎯 Make README visually stunning (with images)
 
 Just tell 👍
