@@ -1,200 +1,260 @@
-# 🚀 FairHire AI
 
-An AI-powered hiring intelligence platform that ensures fair, transparent, and data-driven candidate selection.
+# 🚀 FairHire AI - Intelligent Hiring Bias Auditor
+
+An AI-powered full-stack application that detects bias in hiring decisions using intelligent data analysis.  
+Built with **Next.js (frontend)** and **FastAPI (backend)** with integration of **Google Gemini AI**.
+
+
+
+## 🌐 Live Demo
+
+🚀 Try it now:
+
+- Frontend: https://google-ai-hackerthon.vercel.app  
+- Backend API: https://google-ai-hackerthon.onrender.com  
+- API Docs: https://google-ai-hackerthon.onrender.com/docs  
+
+⚠️ Note: Backend is hosted on Render's free tier and may take 30–50 seconds to wake up after inactivity.
 
 
 
 ## 🧠 Problem Statement
 
-Traditional hiring processes often rely heavily on limited metrics like CGPA and are influenced by unconscious biases related to gender, college tier, or background. This leads to unfair selection and overlooks truly capable candidates.
+Traditional hiring processes often rely heavily on metrics like CGPA or are influenced by unconscious bias.  
+This leads to unfair decisions and overlooks candidates with strong skills, experience, and achievements.
 
 
 
 ## 💡 Solution
 
-**FairHire AI** solves this by analyzing candidates holistically and detecting bias patterns in hiring decisions.
+**FairHire AI** provides a holistic and unbiased evaluation system by:
 
-It evaluates multiple parameters such as:
-- Academic performance  
-- Skills  
-- Achievements  
-- Real-world experience  
-
-The system then identifies hidden biases and provides clear, actionable insights to support fair and merit-based hiring.
+- Analyzing multiple candidate attributes  
+- Detecting bias patterns across groups  
+- Providing AI-generated insights for fair decision-making  
 
 
 
-## 🔍 Key Features
+## 🚀 Features
 
-- 📊 Multi-dimensional candidate analysis  
-- ⚖️ Bias detection across different attributes  
-- 📈 Identification of imbalanced selection patterns  
-- 🧠 AI-generated insights using Gemini  
-- 🌐 Full-stack working web application  
+- 📊 CSV Upload & Analysis  
+- ⚖️ Multi-Attribute Bias Detection (Gender, College Tier, CGPA vs Skills)  
+- 🧠 AI-Powered Explanations using Gemini  
+- 📈 Interactive Dashboard with visual insights  
+- ⚡ Real-time processing with FastAPI  
+- 🎨 Modern UI with glassmorphism design  
 
+## 📁 Project Structure
+
+```bash
+Fairhire-AI/
+├── app/
+│   ├── (app)/
+│   │   ├── dashboard/
+│   │   ├── upload/
+│   │   ├── insights/
+│   │   ├── reports/
+│   │   └── settings/
+│   ├── signin/
+│   ├── signup/
+│   └── page.tsx
+│
+├── backend/
+│   ├── server.py
+│   ├── main_logic.py
+│   ├── bias.py
+│   ├── parser.py
+│   └── requirements.txt
+│
+├── components/
+├── lib/
+│   ├── api.ts
+│   └── analysis-context.tsx
+│
+├── public/
+├── styles/
+├── package.json
+├── next.config.js
+└── README.md
+```
 
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- Next.js  
-- Tailwind CSS  
+- Next.js (React)
+- Tailwind CSS
+- Framer Motion
+- Recharts
 
 ### Backend
-- FastAPI (Python)  
+- FastAPI
+- Python
 
-### AI Integration
-- Google Gemini API  
+### AI
+- Google Gemini API
 
 ### Data Processing
-- Pandas  
+- Pandas / CSV module
 
 ### Deployment
-- Frontend: Vercel  
-- Backend: Render  
+- Vercel (Frontend)
+- Render (Backend)
 
 
 
-## ⚙️ System Architecture
+## ⚙️ How It Works
+
+1. Upload candidate dataset (CSV)
+2. Backend parses the data
+3. Calculates selection rates
+4. Detects bias using statistical comparison
+5. Compares CGPA vs Skills impact
+6. Generates AI-based explanation
+7. Displays results on dashboard
 
 
 
-User (Frontend - Next.js)
-↓
-API Request (/analyze)
-↓
-Backend (FastAPI)
-↓
-Data Processing (Pandas)
-↓
-AI Analysis (Gemini API)
-↓
-Response (Insights + Bias Detection)
-↓
-Frontend Display
+## 📊 CSV Format
+
+Required columns:
+Name, Gender, College, CGPA, Skills, Experience, Achievements, Selected
 
 
 
+Example:
+John Doe,Male,Tier1,9.5,High,High,High,Yes
+Jane Smith,Female,Tier2,8.0,Medium,Medium,Medium,No
 
 
-## 🚀 Live Demo
+## 🔧 API Endpoints
 
-🌐 https://google-ai-hackerthon.vercel.app  
+### GET /
+Health check endpoint
+
+### POST /analyze
+
+- Upload CSV file  
+- Returns bias analysis and insights  
+
+
+## ⚡ Local Setup
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd Fairhire-AI
+````
+
+---
+
+### 2. Backend Setup
+
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate   # Windows
+pip install -r requirements.txt
+uvicorn server:app --reload
+```
+
+---
+
+### 3. Frontend Setup
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## 🔐 Environment Variables
+
+### Frontend (.env.local)
+
+```
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+### Backend (.env)
+
+```
+GEMINI_API_KEY=your_api_key_here
+```
+
+---
+
+## 🧪 Testing
+
+Use Swagger UI:
+
+[http://localhost:8000/docs](http://localhost:8000/docs)
+
+Or test with curl:
+
+```bash
+curl -X POST http://localhost:8000/analyze \
+  -F "file=@backend/sample.csv"
+```
+
+
+
+## 🎯 Impact
+
+* Promotes fair hiring practices
+* Reduces unconscious bias
+* Encourages data-driven decisions
+* Helps identify truly capable candidates
 
 
 
 ## 🧪 Note
 
-This is a **working prototype** developed during the hackathon  
-**“Build with AI – Solution Challenge by Google”**.
+This is a **working prototype** developed during the hackathon
+**“Build with AI – Solution Challenge by Google”**
 
 
-
-## 📂 Project Structure
-
-
-
-Fairhire-AI/
-│
-├── backend/
-│   ├── server.py
-│   ├── main_logic.py
-│   ├── requirements.txt
-│
-├── frontend/
-│   ├── app/
-│   ├── components/
-│   ├── public/
-│   ├── styles/
-│
-└── README.md
-
-
-
-
-
-## ⚡ Getting Started (Local Setup)
-
-### 1. Clone the repository
-bash
-git clone https://github.com/your-username/your-repo.git
-cd Fairhire-AI
-
-
-
-
-### 2. Backend Setup
-
-bash
-cd backend
-pip install -r requirements.txt
-uvicorn server:app --reload
-
-
-
-
-### 3. Frontend Setup
-
-bash
-cd frontend
-npm install
-npm run dev
-
-
-
-
-### 4. Environment Variables
-
-Create `.env` file:
-
-
-GEMINI_API_KEY=your_api_key_here
-NEXT_PUBLIC_API_URL=http://localhost:8000
-
-
-
-
-## 📊 How It Works
-
-1. Upload candidate dataset (CSV)
-2. System processes data using Pandas
-3. AI analyzes patterns and detects bias
-4. Results are displayed with insights
-
----
-
-## 🎯 Impact
-
-* Promotes fair and inclusive hiring
-* Reduces unconscious bias
-* Encourages data-driven decisions
-* Helps identify truly capable candidates
-
----
 
 ## 👥 Team
 
-* Abhinav Kumar
+* Abhinav Kumar (Team Lead)
 * Abhishek
-* Prajwal
-* Shrihari
+* Prajwal Gowda
+* Shrihari D.G
 
----
+
+
+## 📈 Future Enhancements
+
+* Authentication system
+* PDF report export
+* Historical analytics
+* Custom bias thresholds
+* Multi-format support
+
+
 
 ## 🤝 Contributions
 
-Contributions are welcome! Feel free to fork, improve, and raise PRs.
+Contributions are welcome! Feel free to fork and raise a PR.
 
----
+
+
+## ⭐ Support
+
+If you found this project useful, give it a ⭐ on GitHub!
+
+
 
 ## 📬 Contact
 
-For feedback or collaboration:
+For collaboration or feedback:
 
 * LinkedIn: www.linkedin.com/in/abhinav-kumar-969ab5367
 
 
-- 🎯 Make README visually stunning (with images)
+Built with ❤️ for fair and unbiased hiring
 
-Just tell 👍
-```
+
+
